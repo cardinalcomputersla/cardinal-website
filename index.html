@@ -90,6 +90,28 @@ button{font:inherit;cursor:pointer}
 .ftr{margin-top:34px;background:var(--navy);color:#dbe4f2;border-radius:14px;padding:22px;font-size:13.5px;line-height:1.75}
 .ftr b{color:#fff}
 .ftr a{color:#fff;font-weight:600}
+.revband{background:linear-gradient(120deg,#101f3a,var(--navy) 55%,var(--navy2));border-radius:16px;padding:24px;color:#fff}
+.revhead{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.revhead .big{font-size:24px;font-weight:800}
+.revstars{color:#f5b301;font-size:17px;letter-spacing:2px}
+.revhead .cnt{color:#c9d4e8;font-size:13.5px}
+.revhead a{margin-left:auto;color:#fff;font-weight:700;font-size:13px;text-decoration:none;border:1px solid rgba(255,255,255,.4);padding:7px 12px;border-radius:8px;white-space:nowrap}
+.revhead a:hover{background:rgba(255,255,255,.12)}
+.chips{display:flex;gap:7px;flex-wrap:wrap;margin-top:13px}
+.chip{font-size:12px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);padding:5px 10px;border-radius:20px;color:#e8edf6}
+.chip b{color:#fff}
+.revview{overflow:hidden;margin-top:20px}
+.revtrack{display:flex;transition:transform .55s ease}
+.revslide{min-width:100%;padding:2px 30px;text-align:center}
+.revslide .q{font-size:19px;line-height:1.5;font-weight:600;max-width:720px;margin:0 auto}
+.revslide .stars{color:#f5b301;letter-spacing:3px;font-size:15px;margin-bottom:11px}
+.revslide .who{margin-top:13px;color:#c9d4e8;font-size:13.5px}
+.revslide .who b{color:#fff}
+.revnav{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:18px}
+.rbtn{width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.4);background:transparent;color:#fff;font-size:18px;line-height:1;padding:0}
+.rbtn:hover{background:rgba(255,255,255,.12)}
+.rcount{font-size:12.5px;color:#aebdd6;min-width:46px;text-align:center}
+@media (max-width:560px){.revslide .q{font-size:16.5px}.revslide{padding:2px 6px}.revband{padding:19px 15px}}
 @media (max-width:560px){.hero h1{font-size:24px}.gal .main{height:240px}.hdr .nm{font-size:16px}}
 </style>
 </head>
@@ -100,6 +122,7 @@ button{font:inherit;cursor:pointer}
     <div><div class="nm">CARDINAL COMPUTERS</div><div class="sg">Quality Computers, Honest Prices · Monroe, LA</div></div>
     <div class="nav">
       <a href="#forsale">Laptops</a>
+      <a href="#reviews">Reviews</a>
       <a href="#soonsec" id="navsoon">Coming Soon</a>
       <a href="#repairs">Repairs</a>
       <a href="#contact">Contact</a>
@@ -125,6 +148,17 @@ button{font:inherit;cursor:pointer}
     <p class="sub">Available now — tap a laptop for photos, full specs, what's been done to it, and what's in the box.</p>
     <div class="grid" id="grid"></div>
     <div class="detail" id="detail" style="display:none"></div>
+  </div>
+
+  <div class="sec" id="reviews">
+    <h2><span class="bar"></span>What Customers Say</h2>
+    <p class="sub">Real reviews from my Facebook Marketplace profile — buyers rate every sale.</p>
+    <div class="revband">
+      <div class="revhead"><span class="big" id="revavg"></span><span class="revstars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="cnt" id="revcnt"></span><a id="revlink" href="https://www.facebook.com/marketplace/profile/1554503596/" target="_blank" rel="noopener">See them on Facebook</a></div>
+      <div class="chips" id="revchips"></div>
+      <div class="revview" id="revview"><div class="revtrack" id="revtrack"></div></div>
+      <div class="revnav"><button type="button" class="rbtn" id="revprev" aria-label="Previous review">&#8249;</button><span class="rcount" id="revcount"></span><button type="button" class="rbtn" id="revnext" aria-label="Next review">&#8250;</button></div>
+    </div>
   </div>
 
   <div class="sec" id="soonsec" style="display:none">
@@ -239,6 +273,39 @@ document.getElementById('repgrid').innerHTML = SITE.repairs.map(function(r){
 document.getElementById('soldlist').innerHTML = SITE.sold.map(function(s){
   return '<div class="soldrow"><span>'+esc(s.name)+'</span><span class="soldtag">SOLD</span><span class="sp">$'+s.price+'</span></div>';
 }).join('');
+
+/* ---- reviews carousel ---- */
+var REVIEWS = {"average": 4.9, "count": 136, "source": "Facebook Marketplace", "profile_url": "https://www.facebook.com/marketplace/profile/1554503596/", "strengths": {"Communication": 106, "Item as described": 97, "Pricing": 89, "Punctuality": 84, "Friendliness": 46}, "reviews": [{"name": "Shane", "text": "All good Good seller", "month": "October 2026", "stars": 5}, {"name": "Deacon", "text": "first class to deal with have bought many pcs from him before always pleased", "month": "September 2026", "stars": 5}, {"name": "Jason", "text": "I highly recommend Jarred. Great PC, as described, very reasonably priced!", "month": "August 2026", "stars": 5}, {"name": "Azzari", "text": "Very professional and knowledgeable about laptops. The process went smoothly as planned. I recommend Jarred to anyone.", "month": "August 2026", "stars": 5}, {"name": "Kay", "text": "He is an awesome tech salesman and I look forward to doing more business with him here very soon. All around blessing.", "month": "August 2026", "stars": 5}, {"name": "Jake", "text": "Absolute professional!!! Product was exactly as described , transaction was smooth .. great customer service . Fantastic experience all around . Highly reccomend !", "month": "August 2026", "stars": 5}, {"name": "Lorelei", "text": "\ud83d\ude0d Wonderful doing business! Thank you!", "month": "August 2026", "stars": 5}, {"name": "Timz", "text": "Awsome seller in every possible way, item was in perfect condition and running smoothly, i highly recommend", "month": "August 2026", "stars": 5}, {"name": "Ethan", "text": "Couldn\u2019t give 10 stars so I had to leave 5\u2026 great service great response time very upfront and informative", "month": "July 2026", "stars": 5}, {"name": "Katlynn", "text": "Great seller! They were very professional, had excellent communication, were punctual, and made the entire transaction smooth and easy. The pricing was fair, and they were honest and helpful throughout the process. I would definitely recommend buying from them!", "month": "July 2026", "stars": 5}, {"name": "Dawson", "text": "Jarred is top notch- not only with his knowledge, but his service, honesty, communication, and trustworthiness.", "month": "July 2026", "stars": 5}, {"name": "Tori", "text": "Jarred had this item returned because of incorrect address\u2026..he not only kept the item to give me time to get my money back, he put \u201cpending\u201d as to give me a chance to buy it back !! Definitely use him again", "month": "June 2026", "stars": 5}, {"name": "Mark", "text": "Great communicator and pricing. Looks to be quality work.", "month": "June 2026", "stars": 5}, {"name": "Don", "text": "Excellent seller. Wants he buyer to be happy with their purchase", "month": "May 2026", "stars": 5}, {"name": "Latedrick", "text": "Most definitely will buy from him again yall get at him for all your computer needs !!!!!!!! Great person and great prices", "month": "May 2026", "stars": 5}, {"name": "Raylien", "text": "This buy was amazing, computer quality is great he even took the time to explain as well as see if I had any questions!", "month": "May 2026", "stars": 5}, {"name": "Cecil", "text": "Upfront, open and honest! Great guy and awesome deal! Thanks", "month": "April 2026", "stars": 5}, {"name": "Lucky", "text": "He was a very kind man, so full of grace and compassion. Thank you sir, laptop is working great", "month": "April 2026", "stars": 5}, {"name": "Ross", "text": "Excellent!", "month": "April 2026", "stars": 5}, {"name": "Harris", "text": "My purchase was exactly as described and arrived quickly in great condition. I recommend this seller!", "month": "April 2026", "stars": 5}]};
+(function(){
+  var sec = document.getElementById('reviews');
+  if (!REVIEWS || !REVIEWS.reviews || !REVIEWS.reviews.length){ if (sec) sec.style.display = 'none'; return; }
+  document.getElementById('revavg').textContent = '\u2605 ' + REVIEWS.average;
+  document.getElementById('revcnt').textContent = 'from ' + REVIEWS.count + ' ratings on Facebook Marketplace';
+  document.getElementById('revlink').href = REVIEWS.profile_url;
+  document.getElementById('revchips').innerHTML = Object.keys(REVIEWS.strengths).map(function(k){
+    return '<span class="chip">' + esc(k) + ' \u00b7 <b>' + REVIEWS.strengths[k] + '</b></span>';
+  }).join('');
+  var track = document.getElementById('revtrack');
+  track.innerHTML = REVIEWS.reviews.map(function(r){
+    var stars = ''; for (var i = 0; i < r.stars; i++) stars += '\u2605';
+    return '<div class="revslide"><div class="stars">' + stars + '</div><p class="q">&ldquo;' + esc(r.text) + '&rdquo;</p>'
+      + '<div class="who"><b>' + esc(r.name) + '</b> \u00b7 ' + esc(r.month) + ' \u00b7 Facebook Marketplace</div></div>';
+  }).join('');
+  var idx = 0, n = REVIEWS.reviews.length, count = document.getElementById('revcount'), timer = null;
+  function go(i){ idx = ((i % n) + n) % n; track.style.transform = 'translateX(-' + (idx * 100) + '%)'; count.textContent = (idx + 1) + ' / ' + n; }
+  function stop(){ if (timer) clearInterval(timer); timer = null; }
+  function play(){ stop(); if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return; timer = setInterval(function(){ go(idx + 1); }, 6000); }
+  go(0); play();
+  document.getElementById('revnext').addEventListener('click', function(){ go(idx + 1); play(); });
+  document.getElementById('revprev').addEventListener('click', function(){ go(idx - 1); play(); });
+  var view = document.getElementById('revview');
+  view.addEventListener('pointerenter', stop); view.addEventListener('pointerleave', play);
+  view.addEventListener('focusin', stop); view.addEventListener('focusout', play);
+  var tx = null;
+  view.addEventListener('touchstart', function(e){ tx = e.touches[0].clientX; stop(); }, {passive:true});
+  view.addEventListener('touchend', function(e){ if (tx === null) return; var dx = e.changedTouches[0].clientX - tx; if (Math.abs(dx) > 40) go(idx + (dx < 0 ? 1 : -1)); tx = null; play(); }, {passive:true});
+  document.addEventListener('visibilitychange', function(){ if (document.hidden) stop(); else play(); });
+})();
 
 /* ---- alert signup + want list ---- */
 document.getElementById('alertbtn').addEventListener('click', function(){
