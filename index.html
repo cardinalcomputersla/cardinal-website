@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cardinal Computers, LLC — Quality Laptops for Sale in Monroe, LA</title>
+<meta name="description" content="Quality tested laptops for sale in Monroe, Louisiana — every laptop fully tested, fresh Windows install, real warranty. Laptop repair services too.">
+<style>
+*{box-sizing:border-box}
+:root{--navy:#16294D;--navy2:#1f3a68;--red:#C1272D;--red-d:#a01f24;--ink:#1c2430;--mut:#5b6a7d;--line:#dde3ec;--bg:#f6f8fb;--card:#fff}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--bg)}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px 34px}
+.hdr{display:flex;align-items:center;gap:12px;padding:14px 0;flex-wrap:wrap}
+.hdr img{width:48px;height:48px;border-radius:10px;object-fit:cover;border:1px solid var(--line)}
+.hdr .nm{font-weight:800;font-size:19px;letter-spacing:.4px;line-height:1.05}
+.hdr .sg{font-size:12px;color:var(--mut)}
+.nav{margin-left:auto;display:flex;gap:2px;flex-wrap:wrap;align-items:center}
+.nav a{text-decoration:none;font-size:13.5px;font-weight:600;padding:7px 10px;border-radius:8px}
+.nav a:hover{background:#e8edf4}
+.nav a.cta{background:var(--red);color:#fff}
+.nav a.cta:hover{background:var(--red-d)}
+.nav a.tel{color:var(--navy);font-weight:800}
+.hero{background:linear-gradient(120deg,#101f3a,var(--navy) 55%,var(--navy2));color:#fff;border-radius:16px;padding:28px 24px;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;right:-70px;top:-70px;width:230px;height:230px;border-radius:50%;background:radial-gradient(circle,rgba(193,39,45,.5),transparent 70%)}
+.hero h1{margin:0 0 8px;font-size:30px;line-height:1.15;max-width:580px}
+.hero p{margin:0 0 14px;color:#c9d4e8;font-size:15px;max-width:540px;line-height:1.5}
+.rate{display:flex;align-items:center;gap:7px;font-size:13px;color:#e8edf6;margin-bottom:18px}
+.alert{display:flex;gap:8px;max-width:540px;position:relative;z-index:1;flex-wrap:wrap}
+.alert input{flex:1;min-width:210px;padding:11px 13px;border-radius:10px;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.1);color:#fff;font-size:14px}
+.alert input::placeholder{color:#aebdd6}
+button{font:inherit;cursor:pointer}
+.alert button,.send{background:var(--red);color:#fff;border:none;padding:11px 18px;border-radius:10px;font-weight:700;font-size:14px}
+.alert button:hover,.send:hover{background:var(--red-d)}
+.alertok{font-size:14px;color:#b7f0c2;font-weight:600;padding:11px 0;position:relative;z-index:1}
+.sec{margin-top:32px}
+.sec h2{font-size:21px;margin:0 0 4px}
+.sec h2 .bar{display:inline-block;width:26px;height:4px;background:var(--red);border-radius:2px;margin-right:9px;vertical-align:middle}
+.sec .sub{color:var(--mut);font-size:13.5px;margin:0 0 16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(238px,1fr));gap:15px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 1px 3px rgba(16,31,58,.07)}
+.card .ph{height:172px;background:#e8edf4;position:relative}
+.card .ph img{width:100%;height:100%;object-fit:cover;display:block}
+.pill{position:absolute;font-size:11px;font-weight:700;padding:3px 8px;border-radius:20px}
+.pill.cond{right:10px;top:10px;background:rgba(255,255,255,.94);color:var(--navy)}
+.cbody{padding:13px 14px 14px;display:flex;flex-direction:column;gap:5px;flex:1}
+.cname{font-weight:700;font-size:15.5px;line-height:1.25}
+.csub{font-size:12.5px;color:var(--mut)}
+.cspec{font-size:12.5px;color:var(--mut);line-height:1.45;flex:1}
+.crow{display:flex;align-items:center;gap:8px;margin-top:8px}
+.price{font-size:21px;font-weight:800;color:var(--red)}
+.wchip{font-size:11px;font-weight:700;background:#eef2f8;color:var(--navy);padding:4px 8px;border-radius:20px}
+.dbtn{margin-top:11px;background:var(--navy);color:#fff;border:none;width:100%;padding:10px;border-radius:9px;font-weight:700;font-size:13.5px}
+.dbtn:hover{background:var(--navy2)}
+.detail{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:0 1px 3px rgba(16,31,58,.07)}
+.back{background:none;border:1px solid var(--line);padding:7px 13px;border-radius:8px;font-weight:600;font-size:13px;margin-bottom:14px}
+.gal .main{width:100%;height:340px;object-fit:cover;border-radius:10px;background:#e8edf4;display:block}
+.thumbs{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap}
+.thumbs img{width:64px;height:48px;object-fit:cover;border-radius:6px;cursor:pointer;border:2px solid transparent}
+.thumbs img.sel{border-color:var(--red)}
+.dcols{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:16px;margin-top:14px}
+.dcols h3{font-size:13px;text-transform:uppercase;letter-spacing:.6px;color:var(--mut);margin:0 0 7px}
+.dcols ul{margin:0;padding-left:17px;font-size:13.5px;line-height:1.55}
+.ctas{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.cta{display:inline-block;background:var(--red);color:#fff;text-decoration:none;font-weight:700;padding:12px 20px;border-radius:10px;font-size:14.5px}
+.cta:hover{background:var(--red-d)}
+.cta.alt{background:var(--navy)}
+.cta.alt:hover{background:var(--navy2)}
+.soon{background:var(--card);border:1px dashed #b9c4d4;border-radius:14px;padding:15px}
+.dots{display:flex;gap:5px;margin:10px 0 4px}
+.dot{flex:1;text-align:center;font-size:10.5px;color:var(--mut)}
+.dot i{display:block;height:6px;border-radius:3px;background:#e8edf4;margin-bottom:4px}
+.dot.on{color:var(--ink);font-weight:700}
+.dot.on i{background:var(--red)}
+.nrow{display:flex;gap:7px;margin-top:11px}
+.nrow input{flex:1;min-width:0;padding:9px 11px;border-radius:9px;border:1px solid var(--line);font-size:13.5px}
+.nbtn{padding:9px 14px;border-radius:9px;border:none;background:var(--navy);color:#fff;font-weight:700;font-size:13px;white-space:nowrap}
+.ndone{margin-top:11px;font-size:13.5px;font-weight:700;color:#2e9e4f}
+.want{display:grid;grid-template-columns:repeat(auto-fit,minmax(185px,1fr));gap:10px}
+.want input,.want select{width:100%;padding:11px 12px;border-radius:9px;border:1px solid var(--line);background:#fff;color:var(--ink);font-size:14px}
+.okmsg{margin-top:12px;font-size:14px;font-weight:600;color:#2e9e4f}
+.errmsg{margin-top:12px;font-size:14px;font-weight:600;color:var(--red)}
+.rep{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px}
+.rep div{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:12px}
+.rep .rp{font-size:18px;font-weight:800;color:var(--red)}
+.rep .rn{font-size:13px;font-weight:600;margin-top:2px}
+.soldrow{display:flex;align-items:center;gap:10px;padding:10px 2px;border-bottom:1px solid var(--line);font-size:14px}
+.soldrow .sp{margin-left:auto;font-weight:700}
+.soldtag{font-size:10.5px;font-weight:800;color:var(--red);border:1.5px solid var(--red);padding:2px 7px;border-radius:5px;letter-spacing:.5px}
+.ftr{margin-top:34px;background:var(--navy);color:#dbe4f2;border-radius:14px;padding:22px;font-size:13.5px;line-height:1.75}
+.ftr b{color:#fff}
+.ftr a{color:#fff;font-weight:600}
+@media (max-width:560px){.hero h1{font-size:24px}.gal .main{height:240px}.hdr .nm{font-size:16px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hdr">
+    <img src="assets/logo.jpg" alt="Cardinal Computers logo">
+    <div><div class="nm">CARDINAL COMPUTERS</div><div class="sg">Quality Computers, Honest Prices · Monroe, LA</div></div>
+    <div class="nav">
+      <a href="#forsale">Laptops</a>
+      <a href="#soonsec" id="navsoon">Coming Soon</a>
+      <a href="#repairs">Repairs</a>
+      <a href="#contact">Contact</a>
+      <a class="tel" href="tel:+13186920953">(318) 692-0953</a>
+      <a class="cta" href="#alerts">Get Alerts</a>
+    </div>
+  </div>
+
+  <div class="hero" id="alerts">
+    <h1>Quality laptops, tested &amp; ready to work.</h1>
+    <p>Every laptop is fully tested, loaded with a fresh Windows install, and backed by a real warranty — right here in Monroe.</p>
+    <div class="rate"><svg width="16" height="16" viewBox="0 0 24 24" fill="#f5b301"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><span><b id="rating"></b> · <span id="reviews"></span> reviews on Facebook Marketplace</span></div>
+    <div class="alert" id="alertbox">
+      <input id="alertemail" type="email" placeholder="Email for new-laptop alerts" aria-label="Email for new-laptop alerts">
+      <button type="button" id="alertbtn">Notify Me</button>
+    </div>
+    <div class="alertok" id="alertok" style="display:none">You're in — you'll get an email the moment a new laptop is posted.</div>
+    <div class="errmsg" id="alerterr" style="display:none;color:#ffb3b3"></div>
+  </div>
+
+  <div class="sec" id="forsale">
+    <h2><span class="bar"></span>Laptops for Sale</h2>
+    <p class="sub">Available now — tap a laptop for photos, full specs, what's been done to it, and what's in the box.</p>
+    <div class="grid" id="grid"></div>
+    <div class="detail" id="detail" style="display:none"></div>
+  </div>
+
+  <div class="sec" id="soonsec" style="display:none">
+    <h2><span class="bar"></span>Coming Soon</h2>
+    <p class="sub">On the bench now. No prices or dates promised — leave your email and you'll be first to know when one is listed.</p>
+    <div class="grid" id="soongrid"></div>
+  </div>
+
+  <div class="sec">
+    <h2><span class="bar"></span>Looking for Something Specific?</h2>
+    <p class="sub">Tell me what you need and I'll watch my sourcing for it — no obligation.</p>
+    <div class="want">
+      <input id="wname" type="text" placeholder="Your name" aria-label="Your name">
+      <input id="wcontact" type="text" placeholder="Phone or email" aria-label="Phone or email">
+      <input id="wwant" type="text" placeholder="What are you looking for?" aria-label="What are you looking for">
+      <select id="wbudget" aria-label="Budget"><option>Budget: under $150</option><option>Budget: $150–$250</option><option>Budget: $250–$400</option><option>Budget: $400+</option></select>
+    </div>
+    <button type="button" class="send" id="wantbtn">Send My Want List</button>
+    <div class="okmsg" id="wantok" style="display:none">Got it — I'll be in touch when I find a match.</div>
+    <div class="errmsg" id="wanterr" style="display:none"></div>
+  </div>
+
+  <div class="sec" id="repairs">
+    <h2><span class="bar"></span>Repair Services</h2>
+    <p class="sub">Labor prices — parts at cost plus a small sourcing fee, always approved by you first. 90-day warranty on labor.</p>
+    <div class="rep" id="repgrid"></div>
+  </div>
+
+  <div class="sec">
+    <h2><span class="bar"></span>Recently Sold</h2>
+    <p class="sub">They move fast — the alert list above is the best way to catch the next one.</p>
+    <div id="soldlist"></div>
+  </div>
+
+  <div class="ftr" id="contact">
+    <b>Cardinal Computers, LLC</b> · Monroe, Louisiana<br>
+    Call or text: <a href="tel:+13186920953">(318) 692-0953</a> · <a href="mailto:cardinalcomputersla@gmail.com">cardinalcomputersla@gmail.com</a><br>
+    Message me on <a href="https://www.facebook.com/marketplace/profile/1554503596/" target="_blank" rel="noopener">Facebook Marketplace</a><br>
+    Availability changes fast — call, text, or message to confirm a laptop is still here before making the trip.
+  </div>
+</div>
+<script>
+var ITEMS = [{"id": "2191863008209195", "name": "HP 15.6\" Laptop", "sub": "Natural Silver", "price": 280, "warranty": "90-day", "condition": "Like New", "specline": "Core i5-1235U \u2022 8GB RAM \u2022 512GB NVMe SSD \u00b7 15.6\u2033 FHD IPS \u2022 Upgraded display \u2022 Win 11", "specs": ["Windows 11", "Intel Core i5-1235U processor (10-cores)", "Intel Iris Xe graphics", "8GB DDR4 RAM", "512GB m.2 NVMe SSD", "15.6\u201d BOE FHD IPS Micro-edge display", "Wi-Fi w/ Bluetooth", "1x USB-C port", "2x USB-A ports", "HDMI port", "3.5mm audio port", "Multi-format SD media card reader"], "done": ["LCD panel upgrade", "Fresh Windows 11 installation", "Fully updated & optimized", "New thermal paste", "Professionally cleaned inside and out", "Tested for performance & stability"], "included": ["Laptop", "NEW HP 65w charger"], "photos": ["assets/2191863008209195_1.jpg", "assets/2191863008209195_2.jpg", "assets/2191863008209195_3.jpg", "assets/2191863008209195_4.jpg", "assets/2191863008209195_5.jpg"]}, {"id": "1114676524814770", "name": "Lenovo IdeaPad Flex 5 14\"", "sub": "2-in-1 Touchscreen", "price": 220, "warranty": "90-day", "condition": "Good", "specline": "Core i5 \u2022 12GB RAM \u2022 512GB NVMe SSD \u00b7 14\u2033 FHD Touch \u2022 360\u00b0 flip \u2022 Win 11 Home", "specs": ["Windows 11 Home", "Intel Core i5-1135G7 11th gen processor", "Intel Iris Xe / UHD Graphics", "12GB DDR4 RAM", "512GB m.2 NVMe SSD", "14.0\u201d FHD 1920x1080 IPS Multi-Touch display", "Wi-Fi & Bluetooth", "1x USB-C port", "2x USB-A 3.2 Gen 1 ports", "HDMI port", "3.5mm audio combo jack", "HD Webcam w/ physical privacy shutter"], "done": ["Fresh Windows installation", "360\u00b0 hinges and touchscreen calibrated & tested", "Fully updated & optimized", "New thermal paste", "Professionally cleaned inside and out", "Tested for performance & stability"], "included": ["Laptop", "Lenovo 45W AC power adapter / charger"], "photos": ["assets/1114676524814770_1.jpg", "assets/1114676524814770_2.jpg", "assets/1114676524814770_3.jpg", "assets/1114676524814770_4.jpg", "assets/1114676524814770_5.jpg", "assets/1114676524814770_6.jpg", "assets/1114676524814770_7.jpg"]}, {"id": "2260290974539436", "name": "HP 15.6\" Laptop", "sub": "Jet Black", "price": 200, "warranty": "90-day", "condition": "Like New", "specline": "Pentium Silver N5030 \u2022 16GB RAM \u2022 256GB NVMe \u00b7 15.6\u2033 HD display \u2022 Win 11 Home", "specs": ["Windows 11 Home", "Intel Pentium  Silver N5030 processor", "Intel UHD Graphics 605", "16GB DDR4 RAM", "Team Group 256GB m.2 SSD", "15.6\" HD micro-edge display", "Wi-Fi & Bluetooth", "1x USB-C port", "2x USB-A ports", "HDMI port", "3.5mm audio combo jack", "HP TrueVision HD webcam"], "done": ["Fresh Windows installation", "RAM upgraded to 16GB", "SSD upgraded  to 256GB", "Fully updated & optimized", "New thermal paste", "Professionally cleaned inside and out"], "included": ["Laptop", "HP 45W AC power adapter / charger"], "photos": ["assets/2260290974539436_1.jpg", "assets/2260290974539436_2.jpg", "assets/2260290974539436_3.jpg", "assets/2260290974539436_4.jpg", "assets/2260290974539436_5.jpg", "assets/2260290974539436_6.jpg"]}, {"id": "1163793413068765", "name": "Lenovo ThinkPad X1 Carbon G8", "sub": "Business Ultrabook", "price": 200, "warranty": "30-day", "condition": "Good", "specline": "Core i5 \u2022 8GB RAM \u2022 256GB SSD \u00b7 14\u2033 FHD IPS \u2022 Only 2.4 lbs \u2022 Win 11 Pro", "specs": ["Windows 11 Pro", "Intel Core i5-8365U processor", "8GB LPDDR3 RAM", "256GB m.2 SSD", "1920x1080 FHD IPS anti-glare display", "Dolby Atmos 4-speaker sound system", "Wi-Fi w/ Bluetooth", "2x USB-C Thunderbolt 3 ports", "2x USB-A 3.1 Gen 1 ports", "HDMI port", "3.5mm audio port", "HD Webcam w/ ThinkShutter privacy slider"], "done": ["Fresh Windows 11 installation", "Fully updated & optimized", "New thermal paste", "Professionally cleaned inside and out", "Tested for performance & stability"], "included": ["Laptop", "65w USB-C charger"], "photos": ["assets/1163793413068765_1.jpg", "assets/1163793413068765_2.jpg", "assets/1163793413068765_3.jpg", "assets/1163793413068765_4.jpg", "assets/1163793413068765_5.jpg"]}, {"id": "2139563273315060", "name": "HP 14\" Laptop", "sub": "Natural Silver", "price": 180, "warranty": "30-day", "condition": "Like New", "specline": "Ryzen 3 3250U \u2022 8GB RAM \u2022 256GB NVMe SSD \u00b7 14\u2033 HD display \u2022 Upgraded screen \u2022 Win 11", "specs": ["Windows 11", "AMD Ryzen 3 3250U processor", "AMD Radeon Vega 3 graphics", "8GB DDR4 RAM", "Samsung 256GB m.2 NVMe SSD", "14\u201d BOE HD Micro-edge display", "Wi-Fi w/ Bluetooth", "Gigabit ethernet LAN port", "1x USB-C 3.1 Gen 1 port", "3x USB-A 3.1 Gen 1 ports", "HDMI port", "3.5mm audio port"], "done": ["RAM upgraded to 8GB", "Storage upgraded to 256GB", "LCD panel upgrade", "Fresh Windows 11 installation", "Fully updated & optimized", "New thermal paste"], "included": ["Laptop", "NEW HP 45w charger"], "photos": ["assets/2139563273315060_1.jpg", "assets/2139563273315060_2.jpg", "assets/2139563273315060_3.jpg", "assets/2139563273315060_4.jpg", "assets/2139563273315060_5.jpg", "assets/2139563273315060_6.jpg"]}, {"id": "4566586816964429", "name": "HP Envy 15 Touchscreen", "sub": "Desktop-Class Storage", "price": 180, "warranty": "30-day", "condition": "Good", "specline": "Core i7 \u2022 16GB RAM \u2022 128GB SSD + 1TB HDD \u00b7 15.6\u2033 FHD Touch \u2022 Win 11 \u2022 B&O sound", "specs": ["Windows 11", "Intel Core i7-7500U processor", "16GB DDR4 RAM", "128GB m.2 SSD + 1TB HDD dual drives", "1920x1080 FHD IPS touch display", "Bang & Olufsen premium dual audio", "Wi-Fi w/ Bluetooth", "1x USB-C 3.1 Gen 1 port", "3x USB-A 3.1 Gen 1 ports", "HDMI port", "3.5mm audio port", "Multi-format SD media card reader"], "done": ["Fresh Windows 11 installation", "Fully updated & optimized", "1TB secondary drive verified & formatted for mass storage", "New thermal paste", "Professionally cleaned inside and out", "Tested for performance & stability"], "included": ["Laptop", "NEW HP 65w charger"], "photos": ["assets/4566586816964429_1.jpg", "assets/4566586816964429_2.jpg", "assets/4566586816964429_3.jpg", "assets/4566586816964429_4.jpg", "assets/4566586816964429_5.jpg", "assets/4566586816964429_6.jpg"]}, {"id": "1918542195978986", "name": "HP 14\" Laptop", "sub": "Moonlight Blue", "price": 140, "warranty": "30-day", "condition": "Like New", "specline": "Athlon Silver 7120U \u2022 4GB RAM \u2022 128GB UFS \u00b7 14.1\u2033 HD display \u2022 Win 11 Home", "specs": ["Windows 11 Home", "AMD Athlon Silver 7120U processor", "AMD Radeon 610M graphics", "4GB LPDDR5 RAM", "128GB UFS storage", "14.1\" HD micro-edge display", "Wi-Fi & Bluetooth", "1x USB-C port", "2x USB-A ports", "HDMI port", "3.5mm audio combo jack", "HP TrueVision HD webcam"], "done": ["Fresh Windows installation", "Fully updated & optimized", "Professionally cleaned inside and out", "Tested for performance & stability"], "included": ["Laptop", "HP 45W AC power adapter / charger"], "photos": ["assets/1918542195978986_1.jpg", "assets/1918542195978986_2.jpg", "assets/1918542195978986_3.jpg", "assets/1918542195978986_4.jpg", "assets/1918542195978986_5.jpg", "assets/1918542195978986_6.jpg"]}], SOON = [], SITE = {"email": "cardinalcomputersla@gmail.com", "marketplace_url": "https://www.facebook.com/marketplace/profile/1554503596/", "phone_display": "(318) 692-0953", "phone_tel": "+13186920953", "rating": "4.9", "repairs": [{"name": "Diagnostic & estimate (credited toward repair)", "price": 40}, {"name": "Virus & malware removal", "price": 75}, {"name": "Screen replacement", "price": 80}, {"name": "Windows reinstall", "price": 75}, {"name": "SSD + RAM combo upgrade", "price": 85}, {"name": "Data backup or transfer (up to 500 GB)", "price": 80}, {"name": "Keyboard replacement", "price": 70}, {"name": "Tune-up & optimization", "price": 60}], "reviews": 136, "sold": [{"name": "Lenovo ThinkPad T14 Gen 1", "price": 240}, {"name": "HP 15.6\" Touch \u2014 Ryzen 5", "price": 220}, {"name": "HP 14\" \u2014 Waterfall Blue", "price": 180}]};
+var SB = 'https://meyltvyyrhmprsozlyfe.supabase.co', KEY = 'sb_publishable_7-9Qp9Txt6eWhfLAHfeHEA_w1dYw5-n';
+document.getElementById('rating').textContent = SITE.rating;
+document.getElementById('reviews').textContent = SITE.reviews;
+function esc(t){ return String(t == null ? '' : t).replace(/&/g,'&amp;').replace(/</g,'&lt;'); }
+function post(table, body){
+  return fetch(SB + '/rest/v1/' + table, {method:'POST',
+    headers:{'apikey':KEY,'Authorization':'Bearer ' + KEY,'Content-Type':'application/json','Prefer':'return=minimal'},
+    body: JSON.stringify(body)});
+}
+function validEmail(v){ return v && v.indexOf('@') > 0 && v.indexOf('.') > 0; }
+
+/* ---- for-sale grid + detail ---- */
+var grid = document.getElementById('grid'), detail = document.getElementById('detail');
+grid.innerHTML = ITEMS.map(function(it){
+  return '<div class="card"><div class="ph">' + (it.photos.length ? '<img src="'+it.photos[0]+'" alt="'+esc(it.name)+'">' : '')
+    + '<span class="pill cond">'+esc(it.condition)+'</span></div>'
+    + '<div class="cbody"><div class="cname">'+esc(it.name)+'</div><div class="csub">'+esc(it.sub)+'</div>'
+    + '<div class="cspec">'+esc(it.specline)+'</div>'
+    + '<div class="crow"><span class="price">$'+it.price+'</span><span class="wchip">'+esc(it.warranty)+' warranty</span></div>'
+    + '<button type="button" class="dbtn" data-detail="'+it.id+'">View Details</button></div></div>';
+}).join('');
+function ul(a){ return '<ul>' + a.map(function(x){ return '<li>'+esc(x)+'</li>'; }).join('') + '</ul>'; }
+function openDetail(id){
+  var it = null; ITEMS.forEach(function(x){ if (x.id === id) it = x; });
+  if (!it) return;
+  var thumbs = it.photos.map(function(p, i){ return '<img src="'+p+'" data-th="'+i+'" class="'+(i===0?'sel':'')+'" alt="">'; }).join('');
+  detail.innerHTML = '<button type="button" class="back" id="backbtn">&larr; All laptops</button>'
+    + '<div class="gal"><img class="main" id="dmain" src="'+(it.photos[0]||'')+'" alt="'+esc(it.name)+'"><div class="thumbs">'+thumbs+'</div></div>'
+    + '<div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:14px"><span style="font-size:19px;font-weight:800">'+esc(it.name)+'</span><span class="price">$'+it.price+'</span><span class="wchip">'+esc(it.warranty)+' warranty</span><span class="wchip">'+esc(it.condition)+'</span></div>'
+    + '<div class="dcols"><div><h3>Specifications</h3>'+ul(it.specs)+'</div><div><h3>What\u2019s Been Done</h3>'+ul(it.done)+'</div><div><h3>What You Get</h3>'+ul(it.included)+'</div></div>'
+    + '<div class="ctas"><a class="cta" href="tel:'+SITE.phone_tel+'">Call or Text '+esc(SITE.phone_display)+'</a>'
+    + '<a class="cta alt" href="'+SITE.marketplace_url+'" target="_blank" rel="noopener">Message on Marketplace</a></div>'
+    + '<div style="font-size:12.5px;color:var(--mut);margin-top:9px">Mention you saw it on the Cardinal Computers website.</div>';
+  grid.style.display = 'none'; detail.style.display = 'block';
+  document.getElementById('backbtn').addEventListener('click', function(){ detail.style.display='none'; grid.style.display='grid'; document.getElementById('forsale').scrollIntoView({behavior:'smooth'}); });
+  detail.querySelectorAll('[data-th]').forEach(function(t){ t.addEventListener('click', function(){
+    document.getElementById('dmain').src = it.photos[+t.getAttribute('data-th')];
+    detail.querySelectorAll('[data-th]').forEach(function(x){ x.classList.remove('sel'); }); t.classList.add('sel');
+  }); });
+  document.getElementById('forsale').scrollIntoView({behavior:'smooth'});
+}
+grid.querySelectorAll('[data-detail]').forEach(function(b){ b.addEventListener('click', function(){ openDetail(b.getAttribute('data-detail')); }); });
+
+/* ---- coming soon ---- */
+if (SOON.length){
+  document.getElementById('soonsec').style.display = 'block';
+  var labels = ['On the bench','Waiting on parts','Almost ready'];
+  document.getElementById('soongrid').innerHTML = SOON.map(function(s){
+    var dots = ''; for (var i=1;i<=3;i++){ dots += '<div class="dot'+(i<=s.stage?' on':'')+'"><i></i>'+labels[i-1]+'</div>'; }
+    return '<div class="soon"><div class="cname">'+esc(s.name)+'</div><div class="csub">'+esc(s.line)+'</div><div class="dots">'+dots+'</div>'
+      + '<div class="nrow" id="nr-'+s.key+'"><input type="email" placeholder="Email for this one" id="ne-'+s.key+'"><button type="button" class="nbtn" data-notify="'+s.key+'">Notify Me</button></div>'
+      + '<div class="ndone" id="nd-'+s.key+'" style="display:none">You\u2019re on the list for this one.</div></div>';
+  }).join('');
+  document.querySelectorAll('[data-notify]').forEach(function(b){ b.addEventListener('click', function(){
+    var k = b.getAttribute('data-notify'), v = document.getElementById('ne-'+k).value.trim();
+    if (!validEmail(v)){ document.getElementById('ne-'+k).focus(); return; }
+    post('site_notify', {email:v, unit_key:k}).then(function(r){
+      if (r.ok || r.status === 409){ document.getElementById('nr-'+k).style.display='none'; document.getElementById('nd-'+k).style.display='block'; }
+    });
+  }); });
+} else {
+  var ns = document.getElementById('navsoon'); if (ns) ns.style.display = 'none';
+}
+
+/* ---- repairs + sold ---- */
+document.getElementById('repgrid').innerHTML = SITE.repairs.map(function(r){
+  return '<div><div class="rp">$'+r.price+'</div><div class="rn">'+esc(r.name)+'</div></div>';
+}).join('');
+document.getElementById('soldlist').innerHTML = SITE.sold.map(function(s){
+  return '<div class="soldrow"><span>'+esc(s.name)+'</span><span class="soldtag">SOLD</span><span class="sp">$'+s.price+'</span></div>';
+}).join('');
+
+/* ---- alert signup + want list ---- */
+document.getElementById('alertbtn').addEventListener('click', function(){
+  var v = document.getElementById('alertemail').value.trim(), err = document.getElementById('alerterr');
+  if (!validEmail(v)){ err.textContent = 'Please enter a valid email address.'; err.style.display='block'; return; }
+  post('site_subscribers', {email:v, source:'hero'}).then(function(r){
+    if (r.ok || r.status === 409){ document.getElementById('alertbox').style.display='none'; err.style.display='none'; document.getElementById('alertok').style.display='block'; }
+    else { err.textContent = 'Something went wrong — please try again.'; err.style.display='block'; }
+  }).catch(function(){ err.textContent = 'Something went wrong — please try again.'; err.style.display='block'; });
+});
+document.getElementById('wantbtn').addEventListener('click', function(){
+  var name = document.getElementById('wname').value.trim(), contact = document.getElementById('wcontact').value.trim(),
+      want = document.getElementById('wwant').value.trim(), budget = document.getElementById('wbudget').value,
+      err = document.getElementById('wanterr');
+  if (!name || !contact || !want){ err.textContent = 'Please fill in your name, a phone or email, and what you\u2019re looking for.'; err.style.display='block'; return; }
+  post('site_leads', {name:name, contact:contact, want:want, budget:budget.replace('Budget: ','')}).then(function(r){
+    if (r.ok){ err.style.display='none'; document.getElementById('wantok').style.display='block'; document.getElementById('wantbtn').style.display='none'; }
+    else { err.textContent = 'Something went wrong — please try again.'; err.style.display='block'; }
+  }).catch(function(){ err.textContent = 'Something went wrong — please try again.'; err.style.display='block'; });
+});
+</script>
+</body>
+</html>
