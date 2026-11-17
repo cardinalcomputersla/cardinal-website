@@ -339,6 +339,18 @@ document.getElementById('wantbtn').addEventListener('click', function(){
     else { err.textContent = 'Something went wrong — please try again.'; err.style.display='block'; }
   }).catch(function(){ err.textContent = 'Something went wrong — please try again.'; err.style.display='block'; });
 });
+
+/* ---- visit counter: one row per browser session, production host only ---- */
+(function(){
+  try {
+    if (!/cardinalcomputersla\.com$/.test(location.hostname)) return;
+    if (sessionStorage.getItem('cc_pv')) return;
+    sessionStorage.setItem('cc_pv', '1');
+    var ref = null;
+    try { if (document.referrer) ref = new URL(document.referrer).hostname; } catch(e) {}
+    post('site_pageviews', {path: location.pathname, referrer: ref}).catch(function(){});
+  } catch(e) {}
+})();
 </script>
 </body>
 </html>
