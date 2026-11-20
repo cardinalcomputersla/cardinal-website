@@ -95,6 +95,9 @@ button{font:inherit;cursor:pointer}
 .ndone{margin-top:11px;font-size:13.5px;font-weight:700;color:#2e9e4f}
 .want{display:grid;grid-template-columns:repeat(auto-fit,minmax(185px,1fr));gap:10px}
 .want input,.want select{width:100%;padding:11px 12px;border-radius:9px;border:1px solid var(--line);background:#fff;color:var(--ink);font-size:14px}
+.svc{display:grid;grid-template-columns:repeat(auto-fit,minmax(185px,1fr));gap:10px}
+.svc input,.svc select,.svc textarea{width:100%;padding:11px 12px;border-radius:9px;border:1px solid var(--line);background:#fff;color:var(--ink);font-size:14px;font-family:inherit}
+.svc textarea{min-height:84px;resize:vertical}
 .okmsg{margin-top:12px;font-size:14px;font-weight:600;color:#2e9e4f}
 .errmsg{margin-top:12px;font-size:14px;font-weight:600;color:var(--red)}
 .rep{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px}
@@ -218,6 +221,23 @@ button{font:inherit;cursor:pointer}
     <h2><span class="bar"></span>Repair Services</h2>
     <p class="sub">Labor prices — parts at cost plus a small sourcing fee, always approved by you first. 90-day warranty on labor.</p>
     <div class="rep" id="repgrid"></div>
+  </div>
+
+  <div class="sec" id="serviceform">
+    <h2><span class="bar"></span>Request a Repair or Upgrade</h2>
+    <p class="sub">Tell me what's going on and I'll call or text you back with a quote — no obligation. Upgrades too: more memory, a faster SSD, a fresh battery.</p>
+    <div class="svc">
+      <input id="sname" type="text" placeholder="Your name *" aria-label="Your name">
+      <input id="sphone" type="tel" placeholder="Phone (for call/text back) *" aria-label="Phone">
+      <input id="semail" type="email" placeholder="Email (optional)" aria-label="Email">
+      <input id="sdevice" type="text" placeholder="Device — e.g. HP Pavilion 15 *" aria-label="Device">
+      <select id="stype" aria-label="Request type"><option>Repair</option><option>Upgrade</option><option>Not sure</option></select>
+      <select id="sservice" aria-label="Service"><option>Not sure / something else</option></select>
+    </div>
+    <div class="svc" style="margin-top:10px"><textarea id="sdetails" placeholder="Describe the problem, or what you'd like upgraded" aria-label="Details"></textarea></div>
+    <button type="button" class="send" id="svcbtn" style="margin-top:12px">Send Request</button>
+    <div class="okmsg" id="svcok" style="display:none">Got it — I'll call or text you back shortly.</div>
+    <div class="errmsg" id="svcerr" style="display:none"></div>
   </div>
 
   <div class="sec">
@@ -396,6 +416,25 @@ document.getElementById('wantbtn').addEventListener('click', function(){
     else { err.textContent = 'Something went wrong — please try again.'; err.style.display='block'; }
   }).catch(function(){ err.textContent = 'Something went wrong — please try again.'; err.style.display='block'; });
 });
+
+/* ---- service request form ---- */
+(function(){
+  var sel = document.getElementById('sservice');
+  SITE.repairs.forEach(function(r){ var o = document.createElement('option'); o.value = r.name; o.textContent = r.name + ' \u2014 $' + r.price; sel.appendChild(o); });
+  document.getElementById('svcbtn').addEventListener('click', function(){
+    var name = document.getElementById('sname').value.trim(), phone = document.getElementById('sphone').value.trim(),
+        email = document.getElementById('semail').value.trim(), device = document.getElementById('sdevice').value.trim(),
+        type = document.getElementById('stype').value, service = sel.value,
+        details = document.getElementById('sdetails').value.trim(), err = document.getElementById('svcerr');
+    function fail(msg){ err.textContent = msg; err.style.display = 'block'; }
+    if (!name || !phone || !device){ fail('Please fill in your name, phone, and device.'); return; }
+    if (email && !validEmail(email)){ fail('That email doesn\u2019t look right \u2014 or clear it out, email is optional.'); return; }
+    post('site_service_requests', {name:name, phone:phone, email:email || null, device:device, request_type:type, service:service, details:details || null}).then(function(r){
+      if (r.ok){ err.style.display = 'none'; document.getElementById('svcok').style.display = 'block'; document.getElementById('svcbtn').style.display = 'none'; }
+      else fail('Something went wrong \u2014 please try again, or call/text ' + SITE.phone_display + '.');
+    }).catch(function(){ fail('Something went wrong \u2014 please try again, or call/text ' + SITE.phone_display + '.'); });
+  });
+})();
 
 /* ---- visit counter: one row per browser session, production host only ---- */
 (function(){
