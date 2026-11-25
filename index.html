@@ -380,7 +380,7 @@ function openDetail(id){
   detail.innerHTML = '<button type="button" class="back" id="backbtn">&larr; All laptops</button>'
     + '<div class="gal"><img class="main" id="dmain" src="'+(it.photos[0]||'')+'" alt="'+esc(it.name)+'"><div class="thumbs">'+thumbs+'</div></div>'
     + '<div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:14px"><span style="font-size:19px;font-weight:800">'+esc(it.name)+'</span><span class="price">$'+it.price+'</span><span class="wchip">'+esc(it.warranty)+' warranty</span><span class="wchip">'+esc(it.condition)+'</span></div>'
-    + (it.pending ? '<div class="pendnote"><strong>Sale pending.</strong> A buyer is lined up for this one. Deals do fall through though — message me if you\\u2019d like to be next in line for it.</div>' : '')
+    + (it.pending ? '<div class="pendnote"><strong>Sale pending.</strong> A buyer is lined up for this one. Deals do fall through though — message me if you’d like to be next in line for it.</div>' : '')
     + (it.description ? '<div class="desc"><h3>Listing Description</h3><div class="txt">'+esc(it.description)+'</div></div>' : '')
     + '<div class="dcols"><div><h3>Specifications</h3>'+ul(it.specs)+'</div><div><h3>What\u2019s Been Done</h3>'+ul(it.done)+'</div><div><h3>What You Get</h3>'+ul(it.included)+'</div></div>'
     + '<div class="ctas"><a class="cta" href="tel:'+SITE.phone_tel+'">Call or Text '+esc(SITE.phone_display)+'</a>'
