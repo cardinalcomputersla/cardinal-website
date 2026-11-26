@@ -57,6 +57,10 @@ a{color:inherit}
 .hero h1{margin:0 0 8px;font-size:30px;line-height:1.15;max-width:580px}
 .hero p{margin:0 0 14px;color:#c9d4e8;font-size:15px;max-width:540px;line-height:1.5}
 .rate{display:flex;align-items:center;gap:7px;font-size:13px;color:#e8edf6;margin-bottom:18px}
+.trust{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+.trust div{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:8px 13px;font-size:13px;font-weight:700;color:var(--navy);display:flex;align-items:center;gap:7px;box-shadow:0 1px 3px rgba(16,31,58,.07)}
+.trust .tk{color:var(--red);font-weight:800}
+.pill.warr{left:10px;bottom:10px;background:var(--navy);color:#fff}
 .alert{display:flex;gap:8px;max-width:540px;position:relative;z-index:1;flex-wrap:wrap}
 .alert input{flex:1;min-width:210px;padding:11px 13px;border-radius:10px;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.1);color:#fff;font-size:14px}
 .alert input::placeholder{color:#aebdd6}
@@ -134,6 +138,13 @@ button{font:inherit;cursor:pointer}
 .ftr{margin-top:34px;background:var(--navy);color:#dbe4f2;border-radius:14px;padding:22px;font-size:13.5px;line-height:1.75}
 .ftr b{color:#fff}
 .ftr a{color:#fff;font-weight:600}
+.ftr .frow{display:flex;gap:13px;align-items:center;flex-wrap:wrap}
+.ftr .frow img{width:44px;height:44px;border-radius:10px;object-fit:cover}
+.fcols{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:16px;margin-top:18px}
+.fcols h4{margin:0 0 7px;font-size:12px;text-transform:uppercase;letter-spacing:.7px;color:#9db1d1}
+.fcols a{display:block;padding:2px 0;text-decoration:none;font-weight:500}
+.fcols a:hover{text-decoration:underline}
+.fbot{margin-top:18px;padding-top:13px;border-top:1px solid rgba(255,255,255,.18);font-size:12.5px;color:#aebdd6;display:flex;gap:8px;flex-wrap:wrap;justify-content:space-between}
 .revband{background:linear-gradient(120deg,#101f3a,var(--navy) 55%,var(--navy2));border-radius:16px;padding:24px;color:#fff}
 .revhead{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
 .revhead .big{font-size:24px;font-weight:800}
@@ -211,6 +222,14 @@ button{font:inherit;cursor:pointer}
     <div class="errmsg" id="alerterr" style="display:none;color:#ffb3b3"></div>
   </div>
 
+  <div class="trust" aria-label="Why buy from Cardinal Computers">
+    <div><span class="tk">&#9733;</span> 4.9 &middot; 139 Marketplace reviews</div>
+    <div><span class="tk">&#10003;</span> Warranty on every laptop</div>
+    <div><span class="tk">&#10003;</span> Fresh Windows install</div>
+    <div><span class="tk">&#10003;</span> Tested, cleaned &amp; battery-checked</div>
+    <div><span class="tk">&#10003;</span> Local in Monroe, LA</div>
+  </div>
+
   <div class="sec" id="forsale">
     <h2><span class="bar"></span>Laptops for Sale</h2>
     <p class="sub">Available now — tap a laptop for photos, full specs, what's been done to it, and what's in the box.</p>
@@ -224,6 +243,12 @@ button{font:inherit;cursor:pointer}
     <div class="fempty" id="fempty" style="display:none">No laptops match those filters right now.<br><button type="button" id="fclear">Clear filters</button></div>
     <div class="grid" id="grid"></div>
     <div class="detail" id="detail" style="display:none"></div>
+  </div>
+
+  <div class="sec">
+    <h2><span class="bar"></span>Recently Sold</h2>
+    <p class="sub">They move fast — the alert list above is the best way to catch the next one.</p>
+    <div id="soldlist"></div>
   </div>
 
   <div class="sec" id="reviews">
@@ -286,12 +311,6 @@ button{font:inherit;cursor:pointer}
     <div class="errmsg" id="svcerr" style="display:none"></div>
   </div>
 
-  <div class="sec">
-    <h2><span class="bar"></span>Recently Sold</h2>
-    <p class="sub">They move fast — the alert list above is the best way to catch the next one.</p>
-    <div id="soldlist"></div>
-  </div>
-
   <div class="sec" id="faq">
     <h2><span class="bar"></span>Common Questions</h2>
     <p class="sub">Quick answers — anything else, call or text and ask.</p>
@@ -307,10 +326,30 @@ button{font:inherit;cursor:pointer}
   </div>
 
   <div class="ftr" id="contact">
-    <b>Cardinal Computers, LLC</b> · Monroe, Louisiana<br>
-    Call or text: <a href="tel:+13185381483">(318) 538-1483</a> · <a href="mailto:cardinalcomputersla@gmail.com">cardinalcomputersla@gmail.com</a><br>
-    Message me on <a href="https://www.facebook.com/marketplace/profile/1554503596/" target="_blank" rel="noopener">Facebook Marketplace</a><br>
-    Availability changes fast — call, text, or message to confirm a laptop is still here before making the trip.
+    <div class="frow">
+      <img src="assets/logo.jpg" alt="Cardinal Computers logo">
+      <div><b style="font-size:16px">Cardinal Computers, LLC</b><br><span style="color:#aebdd6">Quality Computers, Honest Prices &middot; Monroe, Louisiana</span></div>
+    </div>
+    <div class="fcols">
+      <div>
+        <h4>Explore</h4>
+        <a href="#forsale">Laptops for Sale</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#repairs">Repair Services</a>
+        <a href="#faq">Common Questions</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="tel:+13185381483">Call or text (318) 538-1483</a>
+        <a href="mailto:cardinalcomputersla@gmail.com">cardinalcomputersla@gmail.com</a>
+        <a href="https://www.facebook.com/marketplace/profile/1554503596/" target="_blank" rel="noopener">Facebook Marketplace</a>
+      </div>
+      <div>
+        <h4>Good to Know</h4>
+        <span>Availability changes fast — call, text, or message to confirm a laptop is still here before making the trip.</span>
+      </div>
+    </div>
+    <div class="fbot"><span>&copy; 2026 Cardinal Computers, LLC</span><span>Monroe, Louisiana</span></div>
   </div>
 </div>
 <div class="callbar"><span class="cbnum">(318) 538-1483</span><a href="tel:+13185381483">Call</a><a class="cbtxt" href="sms:+13185381483">Text</a></div>
@@ -332,10 +371,11 @@ var grid = document.getElementById('grid'), detail = document.getElementById('de
 function cardHTML(it){
   return '<div class="card"><div class="ph">' + (it.photos.length ? '<img src="'+it.photos[0]+'" alt="'+esc(it.name)+'">' : '')
     + (it.pending ? '<span class="pill pend">Sale Pending</span>' : '')
-    + '<span class="pill cond">'+esc(it.condition)+'</span></div>'
+    + '<span class="pill cond">'+esc(it.condition)+'</span>'
+    + (it.warranty ? '<span class="pill warr">'+esc(it.warranty)+' warranty</span>' : '') + '</div>'
     + '<div class="cbody"><div class="cname">'+esc(it.name)+'</div><div class="csub">'+esc(it.sub)+'</div>'
     + '<div class="cspec">'+esc(it.specline)+'</div>'
-    + '<div class="crow"><span class="price">$'+it.price+'</span><span class="wchip">'+esc(it.warranty)+' warranty</span></div>'
+    + '<div class="crow"><span class="price">$'+it.price+'</span></div>'
     + '<button type="button" class="dbtn" data-detail="'+it.id+'">View Details</button></div></div>';
 }
 function applyFilters(){
